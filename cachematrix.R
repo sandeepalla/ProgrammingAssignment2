@@ -3,11 +3,11 @@
 ## Usage example:
 ##
 ## > source('cachematrix.R')
-## > m <- makeCacheMatrix(matrix(c(2, 0, 0, 2), c(2, 2)))
+## > m <- makeCacheMatrix(matrix(c(1, 3, 2, 4), c(2, 2)))
 ## > cacheSolve(m)
-## [,1] [,2]
-## [1,]  0.5  0.0
-## [2,]  0.0  0.5
+##[,1] [,2]
+##[1,] -2.0  1.0
+##[2,]  1.5 -0.5
 
 ## Create a special "matrix", which is a list containing
 ## a function to
@@ -38,7 +38,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 ## Calculate the inverse of the special "matrix" created with the above
-## function, reusing cached result if it is available
+## "makeCacheMatrix" function, reusing cached result if it is available
 
 cacheSolve <- function(x, ...) {
   i <- x$getinverse()
